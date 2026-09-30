@@ -12,7 +12,15 @@ import { errorMiddleware } from "./middleware/errorMiddleware.js";
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN }));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://blogify-34nh6z3nd-arpitaawasthi03s-projects.vercel.app",
+      "https://blogify-coral-omega.vercel.app",
+    ],
+  })
+);
 app.use(express.json());
 
 
